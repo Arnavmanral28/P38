@@ -28,15 +28,15 @@ function setup() {
   back = createSprite(200,200,windowWidth,windowHeight); 
   back.addImage("jungle",backImage); 
   back.scale = 4;
-  monkey = createSprite(80,470,20,20);
+  monkey = createSprite(80,700,20,20);
   monkey.addAnimation("moving",monkey_running);
   monkey.scale = 0.2; 
   //camera.position.x = monkey.x;
   //camera.position.y = monkey.y;
   
-  ground = createSprite(400,800,2000000000,10); 
+  ground = createSprite(400,800,windowWidth,10); 
   back.x = back.width/2;
-  //ground.visible = false; 
+  ground.visible = false; 
      
   foodGroup = createGroup(); 
   obstacleGroup = createGroup();
@@ -103,7 +103,7 @@ function draw() {
     monkey.visible = false; 
     obstacleGroup.destroyEach();
     foodGroup.destroyEach(); 
-    //ground.visible = false; 
+    ground.visible = false; 
     if(keyDown("space")&gameState===END){
      gameState= PLAY;
      monkey.visible = true; 
